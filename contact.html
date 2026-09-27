@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — Lisa &amp; Loam</title>
+  <meta name="description" content="Get in touch with Lisa & Loam — questions about a download, custom requests, or just to say hello.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<header class="site">
+  <nav class="nav">
+    <a class="wordmark" href="index.html">Lisa <span class="amp">&amp;</span> Loam</a>
+    <button class="nav-toggle" aria-label="Menu" onclick="document.getElementById('menu').classList.toggle('open')">☰</button>
+    <ul id="menu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="shop.html">Shop</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="page-hero">
+  <div class="wrap">
+    <p class="eyebrow">Say hello</p>
+    <h1>We'd love to <em>hear from you.</em></h1>
+    <p class="lede">A question about a download, an idea for something you wish existed, or a hello from wherever you're planning your next trip — all welcome.</p>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap">
+    <!-- Web3Forms relay -> hello@lisaandloam.com (key installed Aug 18, 2026) -->
+    <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
+      <input type="hidden" name="access_key" value="07ac475f-cd70-4e26-a7c3-2533423e3edd">
+      <input type="hidden" name="subject" value="New message from lisaandloam.com">
+      <input type="hidden" name="from_name" value="lisaandloam.com contact form">
+      <input type="checkbox" name="botcheck" style="display:none;" tabindex="-1" autocomplete="off">
+      <div class="grid-2" style="gap: 20px;">
+        <div>
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div>
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+      </div>
+      <div>
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="7" required></textarea>
+      </div>
+      <div class="center" style="margin-top: 10px;">
+        <button class="btn solid" type="submit">Send message</button>
+        <p class="signup-note" style="margin-top: 18px;">Goes straight to hello@lisaandloam.com &mdash; we reply personally, usually within a day or two.</p>
+      </div>
+    </form>
+  </div>
+</section>
+
+<section class="block tinted center">
+  <div class="wrap">
+    <p class="eyebrow">Order questions?</p>
+    <h2>The fastest way is <em>Etsy messages.</em></h2>
+    <p class="lede" style="margin: 20px auto 36px;">If your question is about a purchase — downloads, files, or troubleshooting — messaging us through Etsy keeps your order details attached and gets the quickest reply.</p>
+    <a class="btn" href="https://www.etsy.com/shop/LisaAndLoam" target="_blank" rel="noopener">Visit the Etsy shop</a>
+  </div>
+</section>
+
+<footer class="site">
+  <div class="footer-hills" aria-hidden="true">
+    <svg viewBox="0 0 1440 120" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="background:#24344C;">
+      <rect width="1440" height="120" fill="#F3F0E8"/>
+      <path d="M0,70 C240,20 480,95 760,60 C1040,28 1240,85 1440,50 L1440,120 L0,120 Z" fill="#3B4E6B" opacity="0.5"/>
+      <path d="M0,95 C300,55 560,115 880,85 C1160,60 1320,105 1440,85 L1440,120 L0,120 Z" fill="#24344C"/>
+    </svg>
+  </div>
+  <div class="footer-inner">
+    <div>
+      <a class="wordmark" href="index.html">Lisa <span class="amp">&amp;</span> Loam</a>
+      <p>Calm, beautiful digital planners for iPad &mdash; designed with care and made to be used.</p>
+    </div>
+    <div>
+      <h4>Explore</h4>
+      <ul>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Find us</h4>
+      <ul>
+        <li><a href="https://www.etsy.com/shop/LisaAndLoam" target="_blank" rel="noopener">Etsy Shop</a></li>
+        <li><a href="mailto:hello@lisaandloam.com">hello@lisaandloam.com</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-base">© 2026 Lisa &amp; Loam · lisaandloam.com · a Lisa &amp; Loam design</div>
+</footer>
+
+</body>
+</html>

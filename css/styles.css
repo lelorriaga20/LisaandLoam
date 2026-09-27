@@ -1,0 +1,380 @@
+/* ==========================================================
+   Lisa & Loam — lisaandloam.com
+   Fonts: Fraunces (headings) + Inter (body)
+   Palette: soft neutrals — sage, eucalyptus, powder blue,
+   teal pine on warm off-white. Motif: layered rolling hills.
+   ========================================================== */
+
+:root {
+  --paper: #FAF8F3;        /* warm off-white */
+  --paper-deep: #F3F0E8;   /* slightly deeper cream band */
+  --band-sage: #E3E9EE;    /* tinted band */
+  --band-blue: #EAEEF1;
+  --sage: #6E88A3;
+  --eucalyptus: #5D7A99;
+  --powder: #7F93A8;
+  --moss: #5C7590;
+  --pine: #24344C;         /* deep accent / dark text */
+  --ink: #2A3440;          /* body text */
+  --ink-soft: #5A6472;     /* muted text */
+  --line: #D8DAD6;         /* hairlines */
+  --white: #FFFFFF;
+
+  --serif: "Fraunces", Georgia, serif;
+  --sans: "Inter", -apple-system, "Helvetica Neue", sans-serif;
+
+  --max: 1120px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--sans);
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--ink);
+  background: var(--paper);
+  -webkit-font-smoothing: antialiased;
+}
+
+img { max-width: 100%; display: block; }
+
+a { color: var(--pine); text-decoration: none; transition: color .2s ease; }
+a:hover { color: var(--eucalyptus); }
+
+.wrap { max-width: var(--max); margin: 0 auto; padding: 0 32px; }
+
+/* ---------- Type ---------- */
+
+h1, h2, h3 { font-family: var(--serif); font-weight: 400; color: var(--pine); line-height: 1.15; }
+
+h1 { font-size: clamp(2.4rem, 5.5vw, 4rem); letter-spacing: -0.01em; }
+h2 { font-size: clamp(1.8rem, 3.6vw, 2.6rem); }
+h3 { font-size: 1.35rem; }
+
+em, .accent-italic { font-family: var(--serif); font-style: italic; font-weight: 350; }
+
+.eyebrow {
+  font-family: var(--sans);
+  font-size: .72rem;
+  font-weight: 600;
+  letter-spacing: .28em;
+  text-transform: uppercase;
+  color: var(--eucalyptus);
+  margin-bottom: 18px;
+}
+
+.lede { font-size: 1.12rem; color: var(--ink-soft); max-width: 620px; }
+
+/* ---------- Header / nav ---------- */
+
+header.site {
+  background: var(--paper);
+  border-bottom: 1px solid var(--line);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 32px;
+  max-width: var(--max);
+  margin: 0 auto;
+}
+
+.wordmark {
+  font-family: var(--serif);
+  font-size: 1.6rem;
+  color: var(--pine);
+  letter-spacing: .01em;
+}
+.wordmark .amp { font-style: italic; color: var(--eucalyptus); }
+
+.nav ul { display: flex; gap: 34px; list-style: none; }
+.nav ul a {
+  font-size: .78rem;
+  font-weight: 500;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+.nav ul a:hover, .nav ul a.active { color: var(--eucalyptus); }
+
+.nav-toggle { display: none; background: none; border: none; font-size: 1.5rem; color: var(--pine); cursor: pointer; }
+
+/* ---------- Buttons ---------- */
+
+.btn {
+  display: inline-block;
+  font-family: var(--sans);
+  font-size: .78rem;
+  font-weight: 600;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  padding: 15px 34px;
+  border: 1px solid var(--pine);
+  color: var(--pine);
+  background: transparent;
+  cursor: pointer;
+  transition: all .25s ease;
+}
+.btn:hover { background: var(--pine); color: var(--paper); }
+
+.btn.solid { background: var(--pine); color: var(--paper); }
+.btn.solid:hover { background: var(--eucalyptus); border-color: var(--eucalyptus); color: var(--white); }
+
+.btn.light { border-color: var(--paper); color: var(--paper); }
+.btn.light:hover { background: var(--paper); color: var(--pine); }
+
+/* ---------- Hero ---------- */
+
+.hero {
+  position: relative;
+  background: linear-gradient(180deg, var(--band-sage) 0%, var(--paper-deep) 100%);
+  overflow: hidden;
+}
+
+.hero-inner {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 110px 32px 170px;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.hero .lede { margin: 26px auto 40px; }
+
+.hero-hills {
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+}
+.hero-hills svg { display: block; width: 100%; height: auto; }
+
+/* ---------- Sections ---------- */
+
+section.block { padding: 96px 0; }
+section.block.tinted { background: var(--paper-deep); }
+section.block.band-sage { background: var(--band-sage); }
+section.block.pine { background: var(--pine); color: var(--paper); }
+section.block.pine h2 { color: var(--paper); }
+section.block.pine .lede { color: #C6D0DD; }
+
+.center { text-align: center; }
+.center .lede { margin-left: auto; margin-right: auto; }
+
+.section-head { margin-bottom: 56px; }
+
+hr.rule { border: none; border-top: 1px solid var(--line); max-width: 220px; margin: 0 auto 56px; }
+
+/* ---------- Category / product grids ---------- */
+
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 36px; }
+.grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 36px; }
+
+.card { background: var(--white); border: 1px solid var(--line); display: flex; flex-direction: column; transition: transform .25s ease, box-shadow .25s ease; }
+.card:hover { transform: translateY(-4px); box-shadow: 0 14px 34px rgba(36, 52, 76, .10); }
+
+.card-media { aspect-ratio: 4 / 3; overflow: hidden; background: var(--band-sage); }
+.card-media img { width: 100%; height: 100%; object-fit: cover; }
+
+.card-media.placeholder {
+  display: flex;
+  align-items: flex-end;
+  position: relative;
+}
+.card-media.placeholder svg { width: 100%; height: auto; display: block; }
+.card-media .placeholder-label {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  transform: translateY(-90%);
+  text-align: center;
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1.25rem;
+  color: var(--pine);
+  padding: 0 20px;
+}
+
+.card-body { padding: 26px 28px 30px; display: flex; flex-direction: column; gap: 10px; flex: 1; }
+.card-body h3 { font-size: 1.25rem; }
+.card-body p { font-size: .92rem; color: var(--ink-soft); flex: 1; }
+
+.card-meta { display: flex; justify-content: space-between; align-items: center; margin-top: 6px; }
+.price { font-family: var(--serif); font-size: 1.1rem; color: var(--pine); }
+.card-link {
+  font-size: .74rem;
+  font-weight: 600;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--eucalyptus);
+  padding-bottom: 3px;
+}
+
+.tag {
+  align-self: flex-start;
+  font-size: .66rem;
+  font-weight: 600;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--eucalyptus);
+  background: var(--band-sage);
+  padding: 5px 12px;
+}
+.tag.soon { color: var(--powder); background: var(--band-blue); }
+
+/* ---------- Split (image + text) ---------- */
+
+.split { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center; }
+.split .btn { margin-top: 30px; }
+.split-media { border: 1px solid var(--line); background: var(--white); padding: 14px; }
+.split-media img { width: 100%; }
+
+/* ---------- Values row ---------- */
+
+.values { display: grid; grid-template-columns: repeat(3, 1fr); gap: 48px; text-align: center; }
+.values h3 { margin-bottom: 10px; }
+.values h3 em { color: var(--eucalyptus); }
+.values p { font-size: .95rem; color: var(--ink-soft); }
+.value-icon { margin: 0 auto 20px; width: 54px; height: 54px; }
+
+/* ---------- Email signup ---------- */
+
+.signup-form { display: flex; gap: 14px; max-width: 560px; margin: 36px auto 0; }
+.signup-form input {
+  flex: 1;
+  font-family: var(--sans);
+  font-size: .95rem;
+  padding: 15px 18px;
+  border: 1px solid var(--line);
+  background: var(--white);
+  color: var(--ink);
+  outline: none;
+}
+.signup-form input:focus { border-color: var(--eucalyptus); }
+.signup-note { font-size: .8rem; color: #C6D0DD; margin-top: 16px; letter-spacing: .04em; }
+section.block:not(.pine) .signup-note { color: var(--ink-soft); }
+
+/* ---------- Page hero (interior pages) ---------- */
+
+.page-hero {
+  background: linear-gradient(180deg, var(--band-sage) 0%, var(--paper) 100%);
+  padding: 80px 0 64px;
+  text-align: center;
+}
+.page-hero .lede { margin: 20px auto 0; }
+
+/* ---------- About ---------- */
+
+.prose { max-width: 680px; margin: 0 auto; }
+.prose p { margin-bottom: 24px; font-size: 1.05rem; }
+.prose .sig { font-family: var(--serif); font-style: italic; font-size: 1.5rem; color: var(--eucalyptus); }
+
+/* ---------- Contact ---------- */
+
+.contact-form { max-width: 620px; margin: 0 auto; display: grid; gap: 20px; }
+.contact-form label { font-size: .72rem; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; color: var(--ink-soft); display: block; margin-bottom: 8px; }
+.contact-form input, .contact-form textarea {
+  width: 100%;
+  font-family: var(--sans);
+  font-size: .95rem;
+  padding: 14px 16px;
+  border: 1px solid var(--line);
+  background: var(--white);
+  color: var(--ink);
+  outline: none;
+  resize: vertical;
+}
+.contact-form input:focus, .contact-form textarea:focus { border-color: var(--eucalyptus); }
+
+/* ---------- FAQ ---------- */
+
+.faq { max-width: 720px; margin: 0 auto; }
+.faq details { border-bottom: 1px solid var(--line); padding: 22px 0; }
+.faq summary { font-family: var(--serif); font-size: 1.15rem; color: var(--pine); cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; }
+.faq summary::after { content: "+"; font-size: 1.3rem; color: var(--eucalyptus); }
+.faq details[open] summary::after { content: "–"; }
+.faq details p { margin-top: 14px; color: var(--ink-soft); font-size: .95rem; }
+
+/* ---------- Footer ---------- */
+
+footer.site {
+  background: var(--pine);
+  color: #C6D0DD;
+  position: relative;
+}
+.footer-hills svg { display: block; width: 100%; height: auto; }
+.footer-inner {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 56px 32px 40px;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 48px;
+}
+.footer-inner .wordmark { color: var(--paper); font-size: 1.5rem; }
+.footer-inner .wordmark .amp { color: #A9BCCF; }
+.footer-inner p { font-size: .88rem; margin-top: 14px; max-width: 320px; }
+.footer-inner h4 { font-family: var(--sans); font-size: .72rem; font-weight: 600; letter-spacing: .24em; text-transform: uppercase; color: var(--paper); margin-bottom: 16px; }
+.footer-inner ul { list-style: none; }
+.footer-inner ul li { margin-bottom: 10px; }
+.footer-inner ul a { color: #C6D0DD; font-size: .9rem; }
+.footer-inner ul a:hover { color: var(--paper); }
+.footer-base { border-top: 1px solid rgba(250, 248, 243, .14); padding: 22px 32px; text-align: center; font-size: .78rem; letter-spacing: .08em; color: #9AAABF; }
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 900px) {
+  .grid-3, .values { grid-template-columns: 1fr 1fr; }
+  .split { grid-template-columns: 1fr; gap: 40px; }
+  .footer-inner { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 640px) {
+  .nav ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--paper);
+    border-bottom: 1px solid var(--line);
+    flex-direction: column;
+    gap: 0;
+    padding: 12px 32px 20px;
+  }
+  .nav ul.open { display: flex; }
+  .nav ul li { padding: 10px 0; }
+  .nav-toggle { display: block; }
+  .grid-3, .grid-2, .values { grid-template-columns: 1fr; }
+  .signup-form { flex-direction: column; }
+  .hero-inner { padding: 72px 24px 130px; }
+  section.block { padding: 64px 0; }
+  .footer-inner { grid-template-columns: 1fr; gap: 32px; }
+  .wrap { padding: 0 24px; }
+}
+
+/* ── Add-ons rows (shop collections) ─────────────────────────── */
+.addons { text-align: center; margin-top: 44px; }
+.addons-title {
+  font-family: var(--sans); font-size: .78rem; letter-spacing: .16em;
+  text-transform: uppercase; color: var(--eucalyptus); margin-bottom: 14px;
+}
+.addons-list { font-size: 1.02rem; color: var(--ink-soft); line-height: 2.1; }
+.addons-list span { color: var(--sage); padding: 0 10px; }
+.addons-list a {
+  color: var(--pine); text-decoration: none;
+  border-bottom: 1px solid var(--sage); padding-bottom: 1px;
+  transition: border-color .2s ease, color .2s ease;
+}
+.addons-list a:hover { color: var(--eucalyptus); border-color: var(--eucalyptus); }
